@@ -1,3 +1,10 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'idea'
+
+
+
 buildscript {
 	ext {
 		springBootVersion = '1.5.6.RELEASE'
@@ -10,19 +17,38 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+
+    maven { url 'http://repo.spring.io/libs-release' }
+    maven { url "http://repo.springsource.org/repo" }
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile "com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.1"
+
+
+    // spring data
+    compile 'org.springframework.data:spring-data-jpa:1.10.0.RELEASE'
+
+
+    // view
+    compile 'de.neuland-bfi:spring-jade4j:0.4.2'
+
+
+    // spring framework
+    compile 'org.springframework.security:spring-security-config:3.2.7.RELEASE'
+    compile 'org.springframework.security:spring-security-web:3.2.7.RELEASE'
+
 }
