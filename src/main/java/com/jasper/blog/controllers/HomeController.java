@@ -15,7 +15,7 @@ import org.springframework.data.domain.Page;
  * on 9/1/2017.
  */
 @Controller
-a
+
 public class HomeController {
 
     @Autowired
