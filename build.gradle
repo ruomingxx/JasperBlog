@@ -45,7 +45,7 @@ dependencies {
 
     // view
     compile 'de.neuland-bfi:spring-jade4j:0.4.2'
-
+    compile 'org.pegdown:pegdown:1.6.0'
 
     //persistence
     compile 'com.zaxxer:HikariCP:+'
@@ -66,5 +66,7 @@ dependencies {
     // MySQL
     compile 'mysql:mysql-connector-java:+'
 
-
+    // python
+    compile 'org.python:jython-standalone:2.7.0'
+    compile 'org.pygments:pygments:2.0.2'
 }
